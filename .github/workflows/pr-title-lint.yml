@@ -1,0 +1,53 @@
+name: pr-title-lint (reusable)
+
+# Org-level reusable workflow. Consume from any repo with:
+#
+#   # .github/workflows/pr-title-lint.yml
+#   name: pr-title-lint
+#   on:
+#     pull_request:
+#       types: [opened, edited, synchronize, reopened]
+#   jobs:
+#     lint:
+#       uses: Angelwerk/.github/.github/workflows/pr-title-lint.yml@main
+#
+# The squash-merge subject on `main` comes from the PR title. If it's not
+# a Conventional Commit, release-please ignores it and no version bump
+# fires. This action validates the title at GitHub level so it can't
+# slip past contributors who don't run the local Lefthook commit-msg
+# gate.
+
+on:
+  workflow_call: {}
+
+permissions:
+  pull-requests: read
+
+concurrency:
+  group: pr-title-lint-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            chore
+            docs
+            refactor
+            test
+            perf
+            style
+            build
+            ci
+            revert
+          requireScope: false
+          disallowScopes: |
+            release

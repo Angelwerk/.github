@@ -1,0 +1,59 @@
+name: Bug report
+description: Something is broken or not behaving as expected.
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Before filing**: search existing issues, and check the relevant
+        repo's `CLAUDE.md` for known limitations.
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Repo + area (e.g. `angelwerk-www → pricing carousel`, `angelwerk → apps/web → CMS members page`)
+      placeholder: "<repo> → <area>"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Include screenshots / console output / network traces if relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: Numbered steps from a fresh state. Branch / commit SHA if relevant.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: Browser / device / OS / Node version where relevant
+      placeholder: "Chrome 124 / macOS 14.5"
+
+  - type: input
+    id: task
+    attributes:
+      label: AW-XXXX task
+      description: If a task already tracks this, link the ID. If not, leave blank — we'll create one if needed.
+      placeholder: "AW-0000"

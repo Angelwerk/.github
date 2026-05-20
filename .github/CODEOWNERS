@@ -1,0 +1,4 @@
+# Default to Felix on every PR until the team grows.
+# This file is the org-wide default for repos that don't ship their own.
+
+* @fkoschi

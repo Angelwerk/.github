@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Internal docs (Engineering Handbook)
+    url: https://github.com/Angelwerk
+    about: Conventions live in the Obsidian vault — repo READMEs and CONTRIBUTING.md point at the public extract.
