@@ -11,6 +11,7 @@ Vereinswebsite, Mitglieder-App und Verwaltungs-CMS aus einem System — eingeric
 |---|---|
 | [`angelwerk`](https://github.com/Angelwerk/angelwerk) | Monorepo: SaaS-App (Next.js), Mobile (Expo), Supabase-Schema, geteilte Packages |
 | [`angelwerk-www`](https://github.com/Angelwerk/angelwerk-www) | Marketing-Site auf `angelwerk.com` (Next.js auf Vercel) |
+| [`aw-tasks`](https://github.com/Angelwerk/aw-tasks) | Internes Terminal-Tool (Go/Bubble Tea): k9s-artige Ansicht der Obsidian-Aufgaben nach Status, review→done direkt im Markdown |
 | [`.github`](https://github.com/Angelwerk/.github) | Organisationsweite Community-Health-Files |
 
 ## Konventionen
